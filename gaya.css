@@ -1,0 +1,247 @@
+/* Tambahan Reset + Anti geser + Anti zoom */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+body,
+html {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+  caret-color: transparent; /* Hilangkan kursor */
+}
+
+* {
+  outline: none; /* Hilangkan outline saat tap */
+}
+
+body {
+  font-size: 1.2rem;
+  font-family: "Work Sans", sans-serif;
+  min-height: 2000px;
+}
+
+/* Hero section fix + background */
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0; /* Hapus padding */
+  margin: 0;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: fixed; /* Ini penting supaya dia nempel layar, bukan container */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("home2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.hero h1,
+.hero h4,
+.hero p {
+  text-shadow: var(--shadow);
+}
+
+.hero h1 {
+  font-family: "Sacramento", cursive;
+  font-size: 6rem;
+}
+
+.hero p {
+  font-size: 1.4rem;
+}
+
+.hero a {
+  color: var(--pink);
+  background-color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.hero a:hover {
+  background-color: var(--pink);
+  color: white;
+}
+
+/* Countdown Container */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.simply-section {
+  background: #1e1e2f;
+  border: 4px solid #7a6cf4;
+  border-radius: 50%;
+  padding: 20px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px #7a6cf4;
+  text-align: center;
+}
+
+.simply-amount {
+  font-size: 32px;
+  font-weight: bold;
+  color: #7a6cf4;
+}
+
+.simply-word {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 5px;
+}
+
+@media (max-width: 500px) {
+  .countdown {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .simply-section {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+  }
+
+  .simply-amount {
+    font-size: 24px;
+  }
+
+  .simply-word {
+    font-size: 10px;
+  }
+}
+
+.mynavbar {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(2px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.mynavbar .offcanvas {
+  height: 100vh;
+}
+
+.mynavbar .navbar-brand,
+.mynavbar .offcanvas-title {
+  font-family: "Sacramento", cursive;
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+
+.mynavbar .navlink {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sabutan,
+.info,
+.doa {
+  background-color: var(--bg);
+  color: white;
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+}
+
+.sabutan h2,
+.info h2,
+.doa h2 {
+  color: white;
+  font-family: "Sacramento", cursive;
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.tombolmap {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#info .deskripsi {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Media Query tambahan untuk HP supaya Hero lebih kecil */
+@media (max-width: 576px) {
+  html {
+    font-size: 75%;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 50px; /* Menentukan tinggi footer */
+  background-color: rgba(0, 0, 0, 0.7); /* Background semi-transparan */
+  color: white;
+  display: flex;
+  justify-content: center; /* Menempatkan teks secara horizontal di tengah */
+  align-items: center; /* Menempatkan teks secara vertikal di tengah */
+  font-size: 1rem;
+  z-index: 2;
+}
+
+.credit {
+  margin: 0;
+}
+
+/* Media query laptop */
+@media (max-width: 992px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Media query tablet */
+@media (max-width: 768px) {
+  .ucapan {
+    min-height: auto;
+    padding: 4rem 1rem;
+  }
+}

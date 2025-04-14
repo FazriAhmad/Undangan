@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Invitation Khitan</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="gaya.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/simplycountdown.js@1.5.0/dist/simplyCountdown.min.css"
+    />
+    <!-- Link ke Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Script ke Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <section
+      id="hero"
+      class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
+    >
+      <main>
+        <h4>Kepada Bapak/Ibu/Saudara/i,</h4>
+        <h3>Khitan Anak Kami</h3>
+        <h1>Ahmad</h1>
+        <p>Akan melangsungkan syukuran dalam:</p>
+        <div class="countdown mb-4"></div>
+        <a href="#sambutan" class="btn btn-lg mt-4" onclick="enableScroll()">Lihat Undangan</a>
+      </main>
+    </section>
+
+    <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">Khitan Ahmad</a>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              Khitan Ahmad
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link" href="#hero">Home</a>
+              <a class="nav-link" href="#sambutan">sambutan</a>
+              <a class="nav-link" href="#info">info</a>
+             <!-- <a class="nav-link" href="#RSVP">RSVP</a>-->
+              <a class="nav-link" href="#doa">doa</a>
+              <a class="nav-link" href="#gift">gif</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section id="sambutan" class="doa">
+        <div class="container text-center">
+          <h2 class="mb-4">Tasyakuran Khitan</h2>
+          <p class="sambutan" style="font-size: 1.5rem; line-height: 2.5rem;">
+            Assalamu’alaikum warahmatullahi wabarakatuh,<br><br>
+            Puji syukur kami panjatkan ke hadirat Allah SWT atas terlaksananya khitan putra pertama kami,<br><br>
+            <h2>Ahmad</h2><br></br>
+            Semoga Allah SWT senantiasa menjadikan Ahmad anak yang shalih, bertanggung jawab, dan bermanfaat di mana pun ia berada.<br><br>
+            Wassalamu’alaikum warahmatullahi wabarakatuh.<br><br>
+            Kami yang berbahagia,<br>
+            Orang Tua
+          </p>
+        </div>
+      </section>
+      
+
+
+    <section id="info" class="info">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-md-10 text-center">
+              <h2>Informasi Acara</h2>
+              <p class="alamat">bip sekian</p>
+      
+              <!-- Tambahkan Tabel Informasi -->
+              <div class="table-responsive">
+                <table class="table table-bordered table-light text-dark">
+                  <thead class="table-secondary">
+                    <tr>
+                      <th>Tempat</th>
+                      <th>Waktu</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Gedung Serbaguna ABC</td>
+                      <td>08.00 WIB</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+      
+              <!-- Elemen peta -->
+              <div id="map" style="height: 400px"></div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="tombolmap">
+          <a href="gmap" target="_blank" class="btn btn-light btn-sm">
+            Klik untuk alamat
+          </a>
+        </div>
+      
+        <p class="deskripsi">
+          Diharapkan untuk tidak salah alamat dan salah tanggal. Manakala tiba
+          di tujuan tidak terlihat tanda-tanda, boleh jadi anda salah tempat atau
+          salah alamat.
+        </p>
+      </section>
+      
+      <section id="doa" class="doa">
+        <div class="container text-center">
+          <h2 class="mb-4">Do'a Untuk Anak Setelah Khitan</h2>
+          <p class="arabic" style="font-size: 1.5rem; line-height: 2.5rem;">
+            اَللَّهُمَّ هَذِهِ سُنَّتُكَ وَسُنَّةُ نَبِيِّكَ، صَلَوَاتُكَ عَلَيْهِ وَآلِهِ، وَاتِّبَاعٌ مِنَّا لِنَبِيِّكَ، بِمَشِيْئَتِكَ وَإِرَادَتِكَ وَقَضَائِكَ لِأَمْرٍ أَرَدْتَهُ وَقَضَاءٍ حَتْمْتَهُ، وَأَمْرٍ أَنْفَذْتَهُ، وَأَذَقْتَهُ حَرَّ اْلحَدِيْدِ فِيْ خِتَانِهِ وَحِجَامَتِهِ بِأْمْرٍ أَنْتَ أَعْرَفُ بِهِ مِنِّيْ
+          </p>
+          <p class="terjemahan mt-3" style="font-size: 1.1rem;">
+            "Ya Allah, ini adalah sunnah-Mu dan sunnah nabi-Mu. Semoga rahmat tercurah padanya dan keluarganya. Dan kami mengikuti nabi-Mu dengan kehendak-Mu dan qadha-Mu. Karena suatu hal yang Engkau inginkan. Karena suatu hal ketentuan yang Engkau tetapkan. Karena suatu perkara yang Engkau laksanakan, dan Engkau merasakan padanya panasnya besi dalam khitan dan bekamnya karena suatu perkara yang Engkau lebih tahu dari aku."
+          </p>
+        </div>
+      </section>
+      
+
+      <section id="gift" class="gift py-5" style="background-color: #f9f9f9;">
+        <div class="container text-center">
+          <h2 class="mb-4" style="font-weight: 600; color: #333;">Gift & Ucapan Terima Kasih</h2>
+          <p class="mb-4" style="font-size: 1.1rem; color: #555; max-width: 600px; margin: 0 auto;">
+            Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan memberikan doa restu.
+            Bagi yang ingin mengirimkan tanda kasih, dapat melalui rekening berikut:
+          </p>
+      
+          <!-- Tabel Rekening -->
+          <div class="table-responsive mb-5">
+            <table class="table table-bordered w-75 mx-auto" style="background-color: white;">
+              <thead class="table-light">
+                <tr style="background-color: #e9ecef;">
+                  <th style="text-align: center;">Bank</th>
+                  <th style="text-align: center;">Nomor Rekening</th>
+                  <th style="text-align: center;">Atas Nama</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center;">Bank BCA</td>
+                  <td style="text-align: center;">
+                    <span id="rek1">1234567890</span><br>
+                    <button class="btn btn-sm btn-outline-primary mt-2" onclick="copyText('rek1')">Salin</button>
+                  </td>
+                  <td style="text-align: center;">Nama Pemilik 1</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center;">Bank Mandiri</td>
+                  <td style="text-align: center;">
+                    <span id="rek2">0987654321</span><br>
+                    <button class="btn btn-sm btn-outline-primary mt-2" onclick="copyText('rek2')">Salin</button>
+                  </td>
+                  <td style="text-align: center;">Nama Pemilik 2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      
+          <!-- Tabel Alamat -->
+          <div class="table-responsive mb-4">
+            <h4 class="mb-3" style="color: #333;">Alamat Kirim Hadiah Fisik</h4>
+            <table class="table table-bordered w-75 mx-auto" style="background-color: white;">
+              <thead class="table-light">
+                <tr style="background-color: #e9ecef;">
+                  <th style="text-align: center;">Alamat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center;">
+                    <span id="alamat1">Jl. Contoh No. 123, Jakarta</span><br>
+                    <button class="btn btn-sm btn-outline-primary mt-2" onclick="copyText('alamat1')">Salin</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      
+          <p class="mt-4" style="font-size: 1rem; color: #666; max-width: 600px; margin: 0 auto;">
+            Atas perhatian dan doa restunya, kami ucapkan terima kasih yang sebesar-besarnya.
+            Semoga kebaikan Bapak/Ibu/Saudara/i dibalas berlipat ganda oleh Allah SWT. Aamiin.
+          </p>
+        </div>
+      </section>
+      <div class="footer">
+        <p class="credit">© 2025 Your Website. Hoblot512.</p>
+      </div>
+      
+      <script>
+        function copyText(elementId) {
+          const text = document.getElementById(elementId).innerText;
+          navigator.clipboard.writeText(text).then(() => {
+            alert('Berhasil disalin: ' + text);
+          }).catch(() => {
+            alert('Gagal menyalin teks');
+          });
+        }
+      </script>
+      
+
+    <script>
+      // Inisialisasi peta dengan koordinat tertentu (latitude, longitude)
+      var map = L.map("map").setView([ -6.1149, 106.1503], 13); // Koordinat Jakarta
+
+      // Menambahkan layer peta dari OpenStreetMap
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      // Menambahkan marker pada peta
+      L.marker([-6.0913547, 106.1669181])
+        .addTo(map)
+        .bindPopup("bip sekian")
+        .openPopup();
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplycountdown.js@1.5.0/dist/simplyCountdown.min.js"></script>
+
+    <script>
+      // Ubah tanggal acara di sini (format: tahun, bulan-1, tanggal, jam, menit)
+      // Note: bulan dimulai dari 0 = Januari, 1 = Februari, dst.
+      simplyCountdown(".countdown", {
+        year: 2025,
+        month: 4,
+        day: 19,
+        hours: 10,
+        minutes: 0,
+        seconds: 0,
+        words: {
+          days: "Hari",
+          hours: "Jam",
+          minutes: "Menit",
+          seconds: "Detik",
+          pluralLetter: "",
+        },
+      });
+    </script>
+
+<script>
+    const rootElement = document.querySelector(":root");
+    
+    let scrollTop = 0;
+    let scrollLeft = 0;
+  
+    function disableScroll() {
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+  
+      window.onscroll = function () {
+        window.scrollTo(scrollLeft, scrollTop);
+      };
+  
+      rootElement.style.scrollBehavior = 'auto';
+    }
+  
+    function enableScroll() {
+      window.onscroll = null; // Hapus event scroll locking
+      rootElement.style.scrollBehavior = 'smooth';
+      localStorage.setItem('opened', 'true'); // Simpan state sudah terbuka
+    }
+  
+    // Cek apakah halaman sudah pernah dibuka
+    if (!localStorage.getItem('opened')) {
+      disableScroll();
+    }
+  </script>
+  
+
+  
+  </body>
+</html>
