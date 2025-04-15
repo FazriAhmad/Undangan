@@ -11,6 +11,8 @@
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
+    <!-- Tambahkan ini di <head> untuk Bootstrap Icons (opsional) -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,8 +29,17 @@
 
     <!-- Script ke Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    
   </head>
-  <body>
+    <body>
+
+    <audio id="backgroundAudio" loop autoplay muted>
+        <source src="rr-letto.m4a" type="audio/mpeg" />
+        Browser Anda tidak mendukung audio.
+      </audio>
+
+      
     <section
       id="hero"
       class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
@@ -43,49 +54,30 @@
       </main>
     </section>
 
-    <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
-      <div class="container">
-        <a class="navbar-brand" href="#">Khitan Ahmad</a>
-        <button
-          class="navbar-toggler border-0"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="offcanvas offcanvas-end"
-          tabindex="-1"
-          id="offcanvasNavbar"
-          aria-labelledby="offcanvasNavbarLabel"
-        >
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-              Khitan Ahmad
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="offcanvas-body">
-            <div class="navbar-nav ms-auto">
-              <a class="nav-link" href="#hero">Home</a>
-              <a class="nav-link" href="#sambutan">sambutan</a>
-              <a class="nav-link" href="#info">info</a>
-             <!-- <a class="nav-link" href="#RSVP">RSVP</a>-->
-              <a class="nav-link" href="#doa">doa</a>
-              <a class="nav-link" href="#gift">gif</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
+<!-- Navbar -->
+<nav class="navbar fixed-bottom navbar-light">
+  <div class="container">
+    <a class="nav-link text-center" href="#hero">
+      <i class="bi bi-house-fill"></i><br>Home
+    </a>
+    <a class="nav-link text-center" href="#sambutan">
+      <i class="bi bi-chat-dots-fill"></i><br>Sambutan
+    </a>
+    <a class="nav-link text-center" href="#info">
+      <i class="bi bi-info-circle-fill"></i><br>Info
+    </a>
+    <a class="nav-link text-center" href="#doa">
+      <i class="bi bi-bookmark-heart-fill"></i><br>Doa
+    </a>
+    <a class="nav-link text-center" href="#rsvp">
+      <i class="bi bi-envelope-heart-fill"></i><br>RSVP
+    </a>
+    <a class="nav-link text-center" href="#gift">
+      <i class="bi bi-gift-fill"></i><br>Gift
+    </a>
+
+  </div>
+</nav>
 
     <section id="sambutan" class="doa">
         <div class="container text-center">
@@ -101,8 +93,6 @@
           </p>
         </div>
       </section>
-      
-
 
     <section id="info" class="info">
         <div class="container">
@@ -160,72 +150,146 @@
         </div>
       </section>
       
-
-      <section id="gift" class="gift py-5" style="background-color: #f9f9f9;">
+      <section id="rsvp" class="rsvp py-5" style="background-color: rgba(255, 255, 255, 0.05); color: white;">
         <div class="container text-center">
-          <h2 class="mb-4" style="font-weight: 600; color: #333;">Gift & Ucapan Terima Kasih</h2>
-          <p class="mb-4" style="font-size: 1.1rem; color: #555; max-width: 600px; margin: 0 auto;">
+          <!-- Icon RSVP -->
+          <div class="mb-3">
+            <i class="bi bi-envelope-heart-fill" style="font-size: 3rem; color: #ffc107;"></i>
+          </div>
+      
+          <!-- Judul dan Deskripsi -->
+          <h2 class="mb-3" style="font-family: 'Sacramento', cursive; font-size: 2.5rem;">RSVP</h2>
+          <p class="mb-4" style="font-size: 1.1rem; font-family: 'Work Sans', sans-serif; max-width: 600px; margin: 0 auto;">
+            Mohon konfirmasi kehadiran Bapak/Ibu/Saudara/i melalui form berikut agar kami dapat mempersiapkan dengan sebaik-baiknya.
+          </p>
+      
+          <!-- Form -->
+          <form class="w-75 mx-auto" style="max-width: 500px;" onsubmit="kirimRSVP(event)">
+            <div class="mb-3">
+              <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap" required />
+            </div>
+            <div class="mb-3">
+              <select class="form-select" id="status" required>
+                <option value="">Apakah Anda akan hadir?</option>
+                <option value="Ya, saya akan hadir">Ya, saya akan hadir</option>
+                <option value="Maaf, saya tidak bisa hadir">Maaf, saya tidak bisa hadir</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" id="pesan" rows="3" placeholder="Ucapan atau pesan (opsional)"></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning px-4">Kirim via WhatsApp</button>
+          </form>
+        </div>
+      </section>
+      
+      <script>
+        // Fungsi untuk mengirim otomatis ke WhatsApp
+        function kirimRSVP() {
+          const nama = document.getElementById("nama").value;
+          const status = document.getElementById("status").value;
+          const pesan = document.getElementById("pesan").value;
+      
+          // Ganti nomor WA di sini (format: 628xxxxxxxxx)
+          const nomorWa = "6287882313815";
+      
+          // Buat teks pesan
+          const teks = `Assalamu'alaikum, saya *${nama}*.\nStatus kehadiran: *${status}*.\n\nUcapan/pesan:\n${pesan}`;
+      
+          // Encode dan buat link WA
+          const url = `https://wa.me/${nomorWa}?text=${encodeURIComponent(teks)}`;
+      
+          // Buka WhatsApp dan kirim pesan
+          window.open(url, "_blank");
+        }
+      
+        // Eksekusi fungsi kirimRSVP setelah halaman dimuat
+        window.onload = function() {
+          const form = document.getElementById("rsvpForm");
+      
+          // Periksa apakah form sudah terisi dan kirim otomatis
+          form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            kirimRSVP();  // Kirim ke WhatsApp
+          });
+      
+          // Cek jika form terisi (optional, bisa disesuaikan)
+          const checkFormFilled = setInterval(function() {
+            const nama = document.getElementById("nama").value;
+            const status = document.getElementById("status").value;
+            if (nama && status) {
+              clearInterval(checkFormFilled);
+              kirimRSVP(); // Kirim otomatis
+            }
+          }, 1000);
+        };
+      </script>      
+
+      <section id="gift" class="gift" style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(5px);">
+        <div class="container text-center">
+          <h2 class="mb-4" style="font-weight: 600; color: white;">Gift</h2>
+          <p class="mb-4" style="font-size: 1.1rem; color: white; max-width: 600px; margin: 0 auto; font-family: 'Work Sans', sans-serif;">
             Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan memberikan doa restu.
             Bagi yang ingin mengirimkan tanda kasih, dapat melalui rekening berikut:
           </p>
       
           <!-- Tabel Rekening -->
           <div class="table-responsive mb-5">
-            <table class="table table-bordered w-75 mx-auto" style="background-color: white;">
+            <table class="table table-bordered w-75 mx-auto bg-white bg-opacity-75">
               <thead class="table-light">
                 <tr style="background-color: #e9ecef;">
-                  <th style="text-align: center;">Bank</th>
-                  <th style="text-align: center;">Nomor Rekening</th>
-                  <th style="text-align: center;">Atas Nama</th>
+                  <th class="text-center">Bank</th>
+                  <th class="text-center">Nomor Rekening</th>
+                  <th class="text-center">Atas Nama</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="text-align: center;">Bank BCA</td>
-                  <td style="text-align: center;">
+                  <td class="text-center">Bank BCA</td>
+                  <td class="text-center">
                     <span id="rek1">1234567890</span><br>
                     <button class="btn btn-sm btn-outline-primary mt-2" onclick="copyText('rek1')">Salin</button>
                   </td>
-                  <td style="text-align: center;">Nama Pemilik 1</td>
+                  <td class="text-center">Nama Pemilik 1</td>
                 </tr>
                 <tr>
-                  <td style="text-align: center;">Bank Mandiri</td>
-                  <td style="text-align: center;">
+                  <td class="text-center">Bank Mandiri</td>
+                  <td class="text-center">
                     <span id="rek2">0987654321</span><br>
                     <button class="btn btn-sm btn-outline-primary mt-2" onclick="copyText('rek2')">Salin</button>
                   </td>
-                  <td style="text-align: center;">Nama Pemilik 2</td>
+                  <td class="text-center">Nama Pemilik 2</td>
                 </tr>
               </tbody>
             </table>
           </div>
       
-          <!-- Tabel Alamat -->
+          <!-- Tabel Alamat-->
           <div class="table-responsive mb-4">
-            <h4 class="mb-3" style="color: #333;">Alamat Kirim Hadiah Fisik</h4>
-            <table class="table table-bordered w-75 mx-auto" style="background-color: white;">
+            <h4 class="mb-3" style="color: white; font-family: 'Sacramento', cursive;">Alamat Kirim Hadiah Fisik</h4>
+            <table class="table table-bordered w-75 mx-auto bg-white bg-opacity-75">
               <thead class="table-light">
                 <tr style="background-color: #e9ecef;">
-                  <th style="text-align: center;">Alamat</th>
+                  <th class="text-center">Alamat</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="text-align: center;">
+                  <td class="text-center">
                     <span id="alamat1">Jl. Contoh No. 123, Jakarta</span><br>
                     <button class="btn btn-sm btn-outline-primary mt-2" onclick="copyText('alamat1')">Salin</button>
                   </td>
                 </tr>
               </tbody>
             </table>
+            <p class="mt-4" style="font-size: 1rem; color:white; max-width: 600px; margin: 0 auto;font-family: 'Work Sans', sans-serif;">
+              Atas perhatian dan doa restunya, kami ucapkan terima kasih yang sebesar-besarnya.
+              Semoga kebaikan Bapak/Ibu/Saudara/i dibalas berlipat ganda oleh Allah SWT. Aamiin.
+            </p>
           </div>
-      
-          <p class="mt-4" style="font-size: 1rem; color: #666; max-width: 600px; margin: 0 auto;">
-            Atas perhatian dan doa restunya, kami ucapkan terima kasih yang sebesar-besarnya.
-            Semoga kebaikan Bapak/Ibu/Saudara/i dibalas berlipat ganda oleh Allah SWT. Aamiin.
-          </p>
         </div>
       </section>
+      
       <div class="footer">
         <p class="credit">© 2025 Your Website. Hoblot512.</p>
       </div>
@@ -288,34 +352,87 @@
 
 <script>
     const rootElement = document.querySelector(":root");
-    
+  
     let scrollTop = 0;
     let scrollLeft = 0;
   
+    // Fungsi untuk menonaktifkan scroll
     function disableScroll() {
+      // Menyimpan posisi scroll saat ini
       scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
   
+      // Menonaktifkan scroll dengan menangkap event scroll
       window.onscroll = function () {
         window.scrollTo(scrollLeft, scrollTop);
       };
   
-      rootElement.style.scrollBehavior = 'auto';
+      // Mengatur overflow untuk body agar tidak bisa digulir
+      document.body.style.overflow = "hidden"; // Ini mengunci scroll
+      rootElement.style.scrollBehavior = 'auto'; // Menghentikan smooth scroll behavior
     }
   
+    // Fungsi untuk mengaktifkan scroll
     function enableScroll() {
-      window.onscroll = null; // Hapus event scroll locking
+      // Menghapus event scroll yang menahan scroll
+      window.onscroll = null;
+  
+      // Mengatur overflow body menjadi normal sehingga scroll bisa aktif
+      document.body.style.overflow = "auto"; // Ini mengaktifkan scroll
+  
+      // Mengaktifkan scroll behavior smooth
       rootElement.style.scrollBehavior = 'smooth';
-      localStorage.setItem('opened', 'true'); // Simpan state sudah terbuka
     }
   
-    // Cek apakah halaman sudah pernah dibuka
-    if (!localStorage.getItem('opened')) {
-      disableScroll();
+    // Menonaktifkan scroll saat halaman dimuat
+    disableScroll();
+  
+    // Fungsi untuk menangani klik pada tombol "Lihat Undangan"
+    function enableScrollOnClick() {
+      enableScroll(); // Mengaktifkan scroll setelah tombol diklik
     }
+  
+    // Menambahkan event listener pada tombol untuk mengaktifkan scroll
+    document.querySelector("a[href='#sambutan']").addEventListener("click", enableScrollOnClick);
   </script>
   
-
   
+<script>
+  const audio = document.getElementById("backgroundAudio");
+  const audioBtn = document.getElementById("audioControl");
+
+  function updateAudioIcon() {
+    if (audio.muted || audio.paused) {
+      audioBtn.innerText = "🔇";
+    } else {
+      audioBtn.innerText = "🔊";
+    }
+  }
+
+  function toggleAudio() {
+    if (audio.paused || audio.muted) {
+      audio.muted = false;
+      audio.play();
+    } else {
+      audio.pause();
+    }
+    updateAudioIcon();
+  }
+
+  // Aktifkan audio saat user pertama kali klik di halaman
+  window.addEventListener('click', () => {
+    if (audio.muted) {
+      audio.muted = false;
+      audio.play();
+      updateAudioIcon();
+    }
+  }, { once: true });
+</script>
+
+  <!-- Tombol Kontrol Audio -->
+  <button id="audioControl" class="btn btn-primary rounded-circle position-fixed" 
+  style="bottom: 100px; right: 20px; z-index: 9999;" onclick="toggleAudio()">
+  🔇
+  </button>
   </body>
 </html>
