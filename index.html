@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Invitation Khitan</title>
     <link
@@ -38,22 +37,28 @@
         Browser Anda tidak mendukung elemen audio.
       </audio>
       
-
+      <section id="hero"
+      class="hero text-center d-flex justify-content-center align-items-center"
+      style="height: 100vh; flex-direction: column; background-color: rgba(0, 0, 0, 0.4); color: white; overflow: hidden;">
+      <div>
+        <h1>Undangan Khitan Ahmad</h1>
+        <p>Sabtu, 4 Mei 2025</p>
+        <a href="#sambutan" class="btn btn-light mt-3">Lihat Selengkapnya</a>
+      </div>
+    </section>
+    
       
+<!--
     <section
       id="hero"
       class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white"
     >
       <main>
-        <h4>Kepada Bapak/Ibu/Saudara/i,</h4>
-        <h3>Khitan Anak Kami</h3>
-        <h1>Ahmad</h1>
-        <p>Akan melangsungkan syukuran dalam:</p>
-        <div class="countdown mb-4"></div>
+
         <a href="#sambutan" class="btn btn-lg mt-4" onclick="enableScroll()">Lihat Undangan</a>
       </main>
     </section>
-
+  -->
 
 
 <!-- Navbar -->
@@ -82,8 +87,6 @@
 </nav>
 
 
-
-
     <section id="sambutan" class="doa">
         <div class="container text-center">
           <h2 class="mb-4">Tasyakuran Khitan</h2>
@@ -106,7 +109,11 @@
           <div class="row justify-content-center">
             <div class="col-md-8 col-md-10 text-center">
               <h2>Informasi Acara</h2>
-              <p class="alamat">bip sekian</p>
+              <h3>Khitan Anak Kami</h3>
+              <h1>Ahmad</h1>
+              <p class="alamat"> Tempar bip sekian</p>
+              <p>Akan melangsungkan syukuran dalam:</p>
+              <div class="countdown mb-4"></div>
       
               <!-- Tambahkan Tabel Informasi -->
               <div class="table-responsive">
@@ -219,17 +226,7 @@
             e.preventDefault();
             kirimRSVP();  // Kirim ke WhatsApp
           });
-      
-          // Cek jika form terisi (optional, bisa disesuaikan)
-          const checkFormFilled = setInterval(function() {
-            const nama = document.getElementById("nama").value;
-            const status = document.getElementById("status").value;
-            if (nama && status) {
-              clearInterval(checkFormFilled);
-              kirimRSVP(); // Kirim otomatis
-            }
-          }, 1000);
-        };
+        }
       </script>
       
       
@@ -297,7 +294,7 @@
             </p>
           </div>
         </div>
-      </section    
+      </section>
 
       <div class="footer">
         <p class="credit">© 2025 Your Website. Hoblot512.</p>
@@ -452,11 +449,13 @@
   </script>
   ue });
   </script>
-
+  
   <!-- Tombol Kontrol Audio -->
   <button id="audioControl" class="btn btn-primary rounded-circle position-fixed" 
   style="bottom: 100px; right: 20px; z-index: 9999;" onclick="toggleAudio()">
   🔇
   </button>
+  
+
   </body>
 </html>
