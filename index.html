@@ -33,11 +33,11 @@
     
   </head>
     <body>
-
-    <audio id="backgroundAudio" loop autoplay muted>
-        <source src="rr-letto.m4a" type="audio/mpeg" />
-        Browser Anda tidak mendukung audio.
+      <audio id="backgroundAudio" loop muted autoplay>
+        <source src="MZ_barakallah.mp3" type="audio/mpeg" />
+        Browser Anda tidak mendukung elemen audio.
       </audio>
+      
 
       
     <section
@@ -53,6 +53,8 @@
         <a href="#sambutan" class="btn btn-lg mt-4" onclick="enableScroll()">Lihat Undangan</a>
       </main>
     </section>
+
+
 
 <!-- Navbar -->
 <nav class="navbar fixed-bottom navbar-light">
@@ -79,6 +81,9 @@
   </div>
 </nav>
 
+
+
+
     <section id="sambutan" class="doa">
         <div class="container text-center">
           <h2 class="mb-4">Tasyakuran Khitan</h2>
@@ -93,6 +98,8 @@
           </p>
         </div>
       </section>
+      
+
 
     <section id="info" class="info">
         <div class="container">
@@ -223,7 +230,9 @@
             }
           }, 1000);
         };
-      </script>      
+      </script>
+      
+      
 
       <section id="gift" class="gift" style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(5px);">
         <div class="container text-center">
@@ -235,17 +244,17 @@
       
           <!-- Tabel Rekening -->
           <div class="table-responsive mb-5">
-            <table class="table table-bordered w-75 mx-auto bg-white bg-opacity-75">
-              <thead class="table-light">
-                <tr style="background-color: #e9ecef;">
+            <table class="table table-bordered w-75 mx-auto" style="background-color: rgba(255,255,255,0.2); color: white;">
+              <thead style="background-color: rgba(255,255,255,0.3); font-family: 'Sacramento', cursive; font-size: 1.5rem;">
+                <tr>
                   <th class="text-center">Bank</th>
                   <th class="text-center">Nomor Rekening</th>
                   <th class="text-center">Atas Nama</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody style="font-family: 'Work Sans', sans-serif;">
                 <tr>
-                  <td class="text-center">Bank BCA</td>
+                  <td class="text-center">BCA</td>
                   <td class="text-center">
                     <span id="rek1">1234567890</span><br>
                     <button class="btn btn-sm btn-outline-primary mt-2" onclick="copyText('rek1')">Salin</button>
@@ -253,7 +262,7 @@
                   <td class="text-center">Nama Pemilik 1</td>
                 </tr>
                 <tr>
-                  <td class="text-center">Bank Mandiri</td>
+                  <td class="text-center">Mandiri</td>
                   <td class="text-center">
                     <span id="rek2">0987654321</span><br>
                     <button class="btn btn-sm btn-outline-primary mt-2" onclick="copyText('rek2')">Salin</button>
@@ -264,16 +273,16 @@
             </table>
           </div>
       
-          <!-- Tabel Alamat-->
+          <!-- Tabel Alamat -->
           <div class="table-responsive mb-4">
             <h4 class="mb-3" style="color: white; font-family: 'Sacramento', cursive;">Alamat Kirim Hadiah Fisik</h4>
-            <table class="table table-bordered w-75 mx-auto bg-white bg-opacity-75">
-              <thead class="table-light">
-                <tr style="background-color: #e9ecef;">
+            <table class="table table-bordered w-75 mx-auto" style="background-color: rgba(255,255,255,0.2); color: white;">
+              <thead style="background-color: rgba(255,255,255,0.3); font-family: 'Sacramento', cursive; font-size: 1.5rem;">
+                <tr>
                   <th class="text-center">Alamat</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody style="font-family: 'Work Sans', sans-serif;">
                 <tr>
                   <td class="text-center">
                     <span id="alamat1">Jl. Contoh No. 123, Jakarta</span><br>
@@ -282,14 +291,14 @@
                 </tr>
               </tbody>
             </table>
-            <p class="mt-4" style="font-size: 1rem; color:white; max-width: 600px; margin: 0 auto;font-family: 'Work Sans', sans-serif;">
+            <p class="mt-4" style="font-size: 1rem; color:white; max-width: 600px; margin: 0 auto; font-family: 'Work Sans', sans-serif;">
               Atas perhatian dan doa restunya, kami ucapkan terima kasih yang sebesar-besarnya.
               Semoga kebaikan Bapak/Ibu/Saudara/i dibalas berlipat ganda oleh Allah SWT. Aamiin.
             </p>
           </div>
         </div>
-      </section>
-      
+      </section    
+
       <div class="footer">
         <p class="credit">© 2025 Your Website. Hoblot512.</p>
       </div>
@@ -397,42 +406,60 @@
   </script>
   
   
-<script>
-  const audio = document.getElementById("backgroundAudio");
-  const audioBtn = document.getElementById("audioControl");
-
-  function updateAudioIcon() {
-    if (audio.muted || audio.paused) {
-      audioBtn.innerText = "🔇";
-    } else {
-      audioBtn.innerText = "🔊";
+  <script>
+    const audio = document.getElementById("backgroundAudio");
+    const audioBtn = document.getElementById("audioControl");
+  
+    const startTime = 41;      // Mulai dari detik 41
+    const endTime = 267;       // Berhenti di detik 267 (4:27)
+  
+    function updateAudioIcon() {
+      if (audio.muted || audio.paused) {
+        audioBtn.innerText = "🔇";
+      } else {
+        audioBtn.innerText = "🔊";
+      }
     }
-  }
-
-  function toggleAudio() {
-    if (audio.paused || audio.muted) {
-      audio.muted = false;
-      audio.play();
-    } else {
-      audio.pause();
-    }
-    updateAudioIcon();
-  }
-
-  // Aktifkan audio saat user pertama kali klik di halaman
-  window.addEventListener('click', () => {
-    if (audio.muted) {
-      audio.muted = false;
-      audio.play();
+  
+    function toggleAudio() {
+      if (audio.paused || audio.muted) {
+        audio.muted = false;
+        audio.currentTime = startTime;
+        audio.play();
+      } else {
+        audio.pause();
+      }
       updateAudioIcon();
     }
-  }, { once: true });
-</script>
+  
+    // Saat halaman pertama kali diklik, mulai dari detik ke-41
+    window.addEventListener('click', () => {
+      if (audio.muted || audio.paused) {
+        audio.muted = false;
+        audio.currentTime = startTime;
+        audio.play();
+        updateAudioIcon();
+      }
+    }, { once: true });
+  
+    // Loop dari detik 267 kembali ke 41
+    audio.addEventListener('timeupdate', () => {
+      if (audio.currentTime >= endTime) {
+        audio.currentTime = startTime;
+        audio.play(); // pastikan tetap play setelah loncat
+      }
+    });
+  </script>
+  ue });
+  </script>
+
 
   <!-- Tombol Kontrol Audio -->
   <button id="audioControl" class="btn btn-primary rounded-circle position-fixed" 
   style="bottom: 100px; right: 20px; z-index: 9999;" onclick="toggleAudio()">
   🔇
   </button>
+  
+
   </body>
 </html>
