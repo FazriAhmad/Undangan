@@ -5,18 +5,14 @@ body {
 }
 
 /* Hero section fix + background */
-.hero {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+section.hero {
+  height: 100vh; /* Full tinggi layar */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0; /* Hapus padding */
-  margin: 0;
-  overflow: hidden;
+  justify-content: center; /* Tengah secara vertikal */
+  align-items: center; /* Tengah secara horizontal */
+  scroll-snap-align: start;
 }
 
 @keyframes fadeIn {
@@ -46,7 +42,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("hom.jpg");
+  background-image: url("home2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
