@@ -146,8 +146,8 @@ section.hero {
 .sambutan {
   background-color: var(--bg);
   color: #efdad7;
-  padding-top: 1rem;
-  padding-bottom: 0.7rem;
+  padding-top: 3rem;
+  padding-bottom: 8.7rem;
 }
 .info,
 .doa {
