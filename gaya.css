@@ -59,8 +59,7 @@ section.hero {
   font-family: "Sacramento", cursive;
   font-size: 6rem;
 }
-.hero h2,
-.hero p {
+.hero h2 .hero p {
   font-family: "Work Sans", sans-serif;
 }
 
@@ -144,21 +143,39 @@ section.hero {
   }
 }
 
-.sabutan,
+.sambutan,
 .info,
 .penutup,
 .doa {
   background-color: var(--bg);
-  color: white;
+  color: #efdad7;
   padding-top: 10rem;
   padding-bottom: 8rem;
 }
 
+.info h3 .sambutan h2 {
+  color: #9ad0ec;
+  font-family: "Poetsen One", sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.info h1 {
+  color: #9ad0ec;
+  font-family: "Sacramento", cursive;
+  font-size: 5rem;
+  font-weight: bold;
+}
+.info h2 {
+  color: #9ad0ec;
+  font-family: "Sacramento", cursive;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
 .gift h2,
-.sabutan h2,
-.info h2,
 .doa h2 {
-  color: white;
+  color: #9ad0ec;
   font-family: "Sacramento", cursive;
   font-size: 5rem;
   font-weight: bold;
@@ -224,6 +241,40 @@ section.hero {
 }
 .credit {
   margin: 0;
+}
+
+.section-flip {
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.section-content {
+  transition: transform 1s ease;
+  transform-style: preserve-3d;
+}
+
+.section-content.flip {
+  transform: rotateY(180deg);
+}
+
+.section-inner {
+  backface-visibility: hidden;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  color: black;
+}
+
+.table td,
+.table th {
+  background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: midnightblue;
 }
 
 /* Media query laptop */
