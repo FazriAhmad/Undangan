@@ -29,8 +29,8 @@ section.hero {
 }
 
 .navbar {
-  background-color: rgba(255, 255, 255, 0.3); /* Semi transparan */
-  backdrop-filter: blur(4px); /* Blur effect */
+  background-color: rgba(255, 255, 255, 0.6); /* Semi transparan */
+  backdrop-filter: blur(10px); /* Blur effect */
   -webkit-backdrop-filter: blur(10px); /* For Safari */
   border-top: 1px solid rgba(255, 255, 255, 0.3); /* Optional: top border */
 }
@@ -143,20 +143,35 @@ section.hero {
   }
 }
 
-.sambutan,
+.sambutan {
+  background-color: var(--bg);
+  color: #efdad7;
+  padding-top: 1rem;
+  padding-bottom: 0.7rem;
+}
 .info,
-.penutup,
 .doa {
   background-color: var(--bg);
   color: #efdad7;
-  padding-top: 10rem;
-  padding-bottom: 8rem;
+  padding-top: 3rem;
+  padding-bottom: 8.7rem;
 }
 
-.info h3 .sambutan h2 {
+.penutup {
+  background-color: var(--bg);
+  color: #efdad7;
+  padding-top: 11rem;
+  padding-bottom: 8rem;
+}
+.sambutan h2 {
   color: #9ad0ec;
   font-family: "Poetsen One", sans-serif;
-  font-size: 5rem;
+  font-size: 4rem;
+}
+.info h3 {
+  color: #efdad7;
+  font-family: "Poetsen One", sans-serif;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -229,7 +244,7 @@ section.hero {
   height: 0;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
 
 .map-responsive iframe {
