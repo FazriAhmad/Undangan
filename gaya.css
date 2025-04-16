@@ -4,6 +4,26 @@ body {
   min-height: 2000px;
 }
 
+section {
+  min-height: 100vh; /* Setiap section setinggi layar penuh */
+  overflow: hidden; /* Sembunyikan konten yang keluar */
+  display: flex; /* Agar konten bisa di-center */
+  flex-direction: column;
+  justify-content: center; /* Vertikal center */
+  align-items: center; /* Horizontal center */
+  scroll-snap-align: start; /* Untuk scroll snap */
+}
+
+html,
+body {
+  scroll-snap-type: y mandatory; /* Aktifkan scroll snap antar section */
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
 /* Hero section fix + background */
 section.hero {
   height: 100vh; /* Full tinggi layar */
@@ -146,8 +166,8 @@ section.hero {
 .sambutan {
   background-color: var(--bg);
   color: #efdad7;
-  padding-top: 3rem;
-  padding-bottom: 8.7rem;
+  padding-top: 1rem;
+  padding-bottom: 0.7rem;
 }
 .info,
 .doa {
