@@ -312,6 +312,28 @@ section.hero {
   color: midnightblue;
 }
 
+#toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #9ad0ec;
+  color: #efdad7;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+#toast.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* Media query laptop */
 @media (max-width: 992px) {
   html {
