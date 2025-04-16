@@ -206,13 +206,23 @@
         <p class="credit">© 2025 Your Website. Hoblot512.</p>
       </div>
       
-      <script>
-        function copyText(elementId) {
-          const text = document.getElementById(elementId).innerText;
+           <script>
+        function showToast(message) {
+          const toast = document.getElementById("toast");
+          toast.innerText = message;
+          toast.classList.add("show");
+      
+          setTimeout(() => {
+            toast.classList.remove("show");
+          }, 2500);
+        }
+      
+        function copyText(id) {
+          const text = document.getElementById(id).innerText;
           navigator.clipboard.writeText(text).then(() => {
-            alert('Berhasil disalin: ' + text);
+            showToast(" berhasil disalin! 📋");
           }).catch(() => {
-            alert('Gagal menyalin teks');
+            showToast("Gagal menyalin. Silakan coba lagi.");
           });
         }
       </script>
