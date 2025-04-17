@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%239ad0ec' class='bi bi-envelope-fill' viewBox='0 0 16 16'%3E%3Cpath d='M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zm6.761 3.611L0 12.803A2 2 0 0 0 2 14h12a2 2 0 0 0 2-1.197l-6.761-4.495L8 9.586l-1.239-.778zM16 4.697l-5.803 3.546L16 11.801V4.697z'/%3E%3C/svg%3E">
+    <title >Tasyakuran Baim</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <!-- Tambahkan ini di <head> untuk Bootstrap Icons (opsional) -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="gaya.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/simplycountdown.js@1.5.0/dist/simplyCountdown.min.css"
+    />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <style>
+      h2 {
+        font-family: "Poetsen One", sans-serif;
+      }
+    </style>
+    
+  </head>
+    <body>
+      <audio id="backgroundAudio" loop muted autoplay>
+        <source src="salam_mz.mp3" type="audio/mpeg" />
+        Browser Anda tidak mendukung elemen audio.
+      </audio>
+      
+      <section id="hero"
+      class="hero text-center d-flex justify-content-center align-items-center"
+      style="height: 100vh; flex-direction: column; background-color: rgba(0, 0, 0, 0.4); color: #9ad0ec; overflow: hidden;">
+      <div>
+        <h2>Undangan Tasyakuran Khitan</h2>
+        <h1>Baim</h1>
+        <p>Sabtu, 19 April 2025</p>
+        <a href="#sambutan" class="btn btn-light mt-3">Lihat Undangan</a>
+      </div>
+    </section>
+    
+
+<!-- Navbar -->
+<nav class="navbar fixed-bottom navbar-light">
+  <div class="container">
+    <a class="nav-link text-center" href="#hero">
+      <i class="bi bi-envelope-fill	"></i><br>Undangan
+    </a>
+    <a class="nav-link text-center" href="#sambutan">
+      <i class="bi bi-chat-dots-fill"></i><br>Sambutan
+    </a>
+    <a class="nav-link text-center" href="#info">
+      <i class="bi bi-geo-alt-fill "></i><br>Lokasi
+    </a>
+    <a class="nav-link text-center" href="#doa">
+      <i class="bi bi-bookmark-heart-fill"></i><br>Doa
+    </a>
+    <a class="nav-link text-center" href="#gift">
+      <i class="bi bi-gift-fill"></i><br>Gift
+    </a>
+    <a class="nav-link text-center" href="#penutup">
+      <i class="bi-journal-bookmark-fill	"></i><br>Penutup
+    </a>
+
+  </div>
+</nav>
+
+
+    <section id="sambutan" class="sambutan">
+        <div class="container text-center">
+          <p class="sambutan" style="font-size: 1.5rem; line-height: 2.5rem;">
+            Assalamu’alaikum warahmatullahi wabarakatuh,<br><br>
+           Tanpa mengurangi rasa hormat kami bermaksud mengundang Bapak/Ibu/Saudara/i pada acara syukuran khitan anak kami :<br><br>
+            <h2>Ibrahim Ahmad Aljazari</h2><br>
+            Putra Dari :<br>
+            Bapak Muhamad Zizin Chandra S.T &<br>
+            Ibu Fikriya Khoirunnisa S.Pd
+          </p>
+        </div>
+      </section>
+      
+
+
+      <section id="info" class="info py-5" style="background-color:transparent;">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-10 text-center">
+              <h2>Acara Tasyakuran Khitan</h3>
+              <h1 class="mb-4">Baim</h1>
+      
+              <p class="alamat mb-4">
+                <strong>Insyaallah akan dilaksanakan pada:</strong><br><br>
+                <strong>Hari:</strong> Sabtu, 19 April 2025<br>
+                <strong>Waktu:</strong> 10:00 WIB s/d 18:00<br>
+                <strong>Tempat:</strong> Rumah Kami<br>
+                <strong>Alamat:</strong> Banten indah permai blok H3 no 14 rt 03 RW 30 kel unyur serang banten
+              </p>
+      
+              <p class="mb-3">Akan melangsungkan syukuran dalam:</p>
+              <div class="countdown mb-4"></div>
+      
+              <div class="map-responsive mb-3">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.30456163649!2d106.1684951066513!3d-6.089610356300598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e41f4b0b5ebbe69%3A0xf2c0d56f9e143f9e!2sBlk.%20H3%20No.14%2C%20Unyur%2C%20Kec.%20Serang%2C%20Kota%20Serang%2C%20Banten%2042111!5e0!3m2!1sid!2sid!4v1744789323497!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              
+              <a href="https://maps.app.goo.gl/AeDNasvrszwL2qRe6" target="_blank" class="btn btn-light mt-3">
+                Klik untuk buka alamat di Google Maps
+              </a>
+      
+            </div>
+          </div>
+        </div>
+      </section>
+            
+      <section id="doa" class="doa">
+        <div class="container text-center">
+          <h2 class="mb-4">Do'a Untuk Anak Setelah Khitan</h2>
+          <p class="arabic" style="font-size: 1.5rem; line-height: 2.5rem;">
+            اَللَّهُمَّ هَذِهِ سُنَّتُكَ وَسُنَّةُ نَبِيِّكَ، صَلَوَاتُكَ عَلَيْهِ وَآلِهِ، وَاتِّبَاعٌ مِنَّا لِنَبِيِّكَ، بِمَشِيْئَتِكَ وَإِرَادَتِكَ وَقَضَائِكَ لِأَمْرٍ أَرَدْتَهُ وَقَضَاءٍ حَتْمْتَهُ، وَأَمْرٍ أَنْفَذْتَهُ، وَأَذَقْتَهُ حَرَّ اْلحَدِيْدِ فِيْ خِتَانِهِ وَحِجَامَتِهِ بِأْمْرٍ أَنْتَ أَعْرَفُ بِهِ مِنِّيْ
+          </p>
+          <p class="terjemahan mt-3" style="font-size: 1.1rem;">
+            "Ya Allah, ini adalah sunnah-Mu dan sunnah nabi-Mu. Semoga rahmat tercurah padanya dan keluarganya. Dan kami mengikuti nabi-Mu dengan kehendak-Mu dan qadha-Mu. Karena suatu hal yang Engkau inginkan. Karena suatu hal ketentuan yang Engkau tetapkan. Karena suatu perkara yang Engkau laksanakan, dan Engkau merasakan padanya panasnya besi dalam khitan dan bekamnya karena suatu perkara yang Engkau lebih tahu dari aku."
+          </p>
+        </div>
+      </section>
+            
+
+      <section id="gift" class="gift" style="background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(5px);">
+        <div class="container text-center">
+          <h2 class="mb-4" style="font-weight: 600;">Tanda Kasih</h2>
+          <p class="mb-4" style="font-size: 1.1rem; color: white; max-width: 600px; margin: 0 auto; font-family: 'Work Sans', sans-serif;">
+            Terimakasih telah menambah semangat kegembiraan tasyakuran khitan putra kami dengan kehadiran dan hadiah indah anda.
+          </p>
+      
+          <!-- Tabel Rekening -->
+<!-- Tabel Rekening -->
+<div class="table-responsive mb-5">
+  <table class="table table-bordered w-75 mx-auto" 
+  style="background-color: transparent; color: white; border-color: rgba(255,255,255,0.3);">
+    <thead style="background-color: transparent; font-family: 'Sacramento', cursive; font-size: 1.5rem;">
+      <tr>
+        <th class="text-center">Bank</th>
+        <th class="text-center">Nomor Rekening</th>
+        <th class="text-center">Atas Nama</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: transparent;"font-family: 'Work Sans', sans-serif;">
+      <tr>
+        <td class="text-center">BCA</td>
+        <td class="text-center">
+          <span id="rek1">2452557798</span><br>
+          <button class="btn btn-sm" style="border: 1px solid rgba(255,255,255,0.4); color: white;" onclick="copyText('rek1')">Salin</button>
+        </td>
+        <td class="text-center">Fikriya Khoirunnisa</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+      
+ <!-- Tabel Alamat -->
+<div class="table-responsive mb-4">
+  <h4 class="mb-3" style="color: white; font-family: 'Sacramento', cursive;">Alamat Kirim Hadiah Fisik</h4>
+  <table class="table table-bordered w-75 mx-auto" style="background-color: transparent; color: white;">
+    <thead style="background-color: transparent; font-family: 'Sacramento', cursive; font-size: 1.5rem;">
+      <tr>
+        <th class="text-center">Alamat</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: transparent;"font-family: 'Work Sans', sans-serif;">
+      <tr>
+        <td class="text-center">
+          <span id="alamat1">Banten indah permai blok H3 no 14 rt 03 RW 30 kel unyur serang banten</span><br>
+          <button class="btn btn-sm" style="border: 1px solid rgba(255,255,255,0.4); color: white;" onclick="copyText('alamat1')">Salin</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+      </section>
+
+      <section id="penutup" class="penutup"> 
+        <div class="container text-center">
+          <h4 class="mb-4" style="font-family: 'Work Sans', sans-serif; ">
+            Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i dan teman-teman berkenan hadir dan memberikan doa pada acara ini
+          </h4>
+          
+          <p class="acara" style="font-size: 1.5rem; line-height: 2.5rem; font-family: 'Work Sans', sans-serif;">
+            Dengan hormat,
+            <br>  
+            <h3><span style="font-family: 'Poetsen One', sans-serif; font-size: 2rem;">Bapak M.Zizin Chandra &
+              <br>Ibu Fikriya Khoirunnisa (ica)</span></h3>
+          </p>
+        </div>
+      </section>
+
+      <div class="footer">
+        <p class="credit">© 2025 Your Website. Hoblot512.</p>
+      </div>
+      
+      <script>
+        function showToast(message) {
+          const toast = document.getElementById("toast");
+          toast.innerText = message;
+          toast.classList.add("show");
+      
+          setTimeout(() => {
+            toast.classList.remove("show");
+          }, 2500);
+        }
+      
+        function copyText(id) {
+          const text = document.getElementById(id).innerText;
+          navigator.clipboard.writeText(text).then(() => {
+            showToast(" berhasil disalin! 📋");
+          }).catch(() => {
+            showToast("Gagal menyalin. Silakan coba lagi.");
+          });
+        }
+      </script>
+      
+      
+      
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplycountdown.js@1.5.0/dist/simplyCountdown.min.js"></script>
+
+    <script>
+      // Ubah tanggal acara di sini (format: tahun, bulan-1, tanggal, jam, menit)
+      // Note: bulan dimulai dari 0 = Januari, 1 = Februari, dst.
+      simplyCountdown(".countdown", {
+        year: 2025,
+        month: 4,
+        day: 19,
+        hours: 10,
+        minutes: 0,
+        seconds: 0,
+        words: {
+          days: "Hari",
+          hours: "Jam",
+          minutes: "Menit",
+          seconds: "Detik",
+          pluralLetter: "",
+        },
+      });
+    </script>
+
+<script>
+    const rootElement = document.querySelector(":root");
+  
+    let scrollTop = 0;
+    let scrollLeft = 0;
+  
+    // Fungsi untuk menonaktifkan scroll
+    function disableScroll() {
+      // Menyimpan posisi scroll saat ini
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+  
+      // Menonaktifkan scroll dengan menangkap event scroll
+      window.onscroll = function () {
+        window.scrollTo(scrollLeft, scrollTop);
+      };
+  
+      // Mengatur overflow untuk body agar tidak bisa digulir
+      document.body.style.overflow = "hidden"; // Ini mengunci scroll
+      rootElement.style.scrollBehavior = 'auto'; // Menghentikan smooth scroll behavior
+    }
+  
+    // Fungsi untuk mengaktifkan scroll
+    function enableScroll() {
+      // Menghapus event scroll yang menahan scroll
+      window.onscroll = null;
+  
+      // Mengatur overflow body menjadi normal sehingga scroll bisa aktif
+      document.body.style.overflow = "auto"; // Ini mengaktifkan scroll
+  
+      // Mengaktifkan scroll behavior smooth
+      rootElement.style.scrollBehavior = 'smooth';
+    }
+  
+    // Menonaktifkan scroll saat halaman dimuat
+    disableScroll();
+  
+    // Fungsi untuk menangani klik pada tombol "Lihat Undangan"
+    function enableScrollOnClick() {
+      enableScroll(); // Mengaktifkan scroll setelah tombol diklik
+    }
+  
+    // Menambahkan event listener pada tombol untuk mengaktifkan scroll
+    document.querySelector("a[href='#sambutan']").addEventListener("click", enableScrollOnClick);
+  </script>
+  
+  
+  <script>
+    const audio = document.getElementById("backgroundAudio");
+    const audioBtn = document.getElementById("audioControl");
+  
+    const startTime = 48;      // Mulai dari detik 41
+    const endTime = 325;       // Berhenti di detik 267 (4:27)
+  
+    function updateAudioIcon() {
+      if (audio.muted || audio.paused) {
+        audioBtn.innerText = "🔇";
+      } else {
+        audioBtn.innerText = "🔊";
+      }
+    }
+  
+    function toggleAudio() {
+      if (audio.paused || audio.muted) {
+        audio.muted = false;
+        audio.currentTime = startTime;
+        audio.play();
+      } else {
+        audio.pause();
+      }
+      updateAudioIcon();
+    }
+  
+    // Saat halaman pertama kali diklik, mulai dari detik ke-41
+    window.addEventListener('click', () => {
+      if (audio.muted || audio.paused) {
+        audio.muted = false;
+        audio.currentTime = startTime;
+        audio.play();
+        updateAudioIcon();
+      }
+    }, { once: true });
+  
+    // Loop dari detik 267 kembali ke 41
+    audio.addEventListener('timeupdate', () => {
+      if (audio.currentTime >= endTime) {
+        audio.currentTime = startTime;
+        audio.play(); // pastikan tetap play setelah loncat
+      }
+    });
+  </script>
+  ue });
+  </script>
+  
+
+  
+  
+
+  <!-- Tombol Kontrol Audio -->
+  <button id="audioControl" class="btn btn-primary rounded-circle position-fixed" 
+  style="bottom: 100px; right: 20px; z-index: 9999;" onclick="toggleAudio()">
+  🔇
+  </button>
+  <div id="toast">Pesan berhasil disalin!</div>
+
+
+  </body>
+</html>

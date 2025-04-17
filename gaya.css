@@ -1,0 +1,350 @@
+body {
+  font-size: 1.2rem;
+  font-family: "Work Sans", sans-serif;
+  min-height: 2000px;
+}
+
+section {
+  min-height: 100vh; /* Setiap section setinggi layar penuh */
+  overflow: hidden; /* Sembunyikan konten yang keluar */
+  display: flex; /* Agar konten bisa di-center */
+  flex-direction: column;
+  justify-content: center; /* Vertikal center */
+  align-items: center; /* Horizontal center */
+  scroll-snap-align: start; /* Untuk scroll snap */
+}
+
+html,
+body {
+  scroll-snap-type: y mandatory; /* Aktifkan scroll snap antar section */
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero section fix + background */
+section.hero {
+  height: 100vh; /* Full tinggi layar */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Tengah secara vertikal */
+  align-items: center; /* Tengah secara horizontal */
+  scroll-snap-align: start;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero {
+  animation: fadeIn 2s ease-in-out; /* Menambahkan efek fade-in saat hero muncul */
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.6); /* Semi transparan */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Optional: top border */
+}
+
+.hero::before {
+  content: "";
+  position: fixed; /* Ini penting supaya dia nempel layar, bukan container */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("b1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.hero h1,
+.hero h4,
+.hero p {
+  text-shadow: var(--shadow);
+}
+
+.hero h1 {
+  font-family: "Sacramento", cursive;
+  font-size: 6rem;
+}
+.hero h2 .hero p {
+  font-family: "Work Sans", sans-serif;
+}
+
+.hero a {
+  background-color: var(--bg);
+  color: var(--text, white); /* fallback jika --text tidak ada */
+  padding: 0.5rem 1.25rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero a:hover {
+  background-color: var(--bg-hover, #ffffff22);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hero a:hover {
+  background-color: var(--pink);
+  color: white;
+}
+
+/* Countdown Container */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.simply-section {
+  background: #1e1e2f;
+  border: 4px solid white;
+  border-radius: 50%;
+  padding: 20px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px white;
+  text-align: center;
+}
+
+.simply-amount {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+}
+
+.simply-word {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 5px;
+}
+
+@media (max-width: 500px) {
+  .countdown {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .simply-section {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+  }
+
+  .simply-amount {
+    font-size: 24px;
+  }
+
+  .simply-word {
+    font-size: 10px;
+  }
+}
+
+.sambutan {
+  background-color: var(--bg);
+  color: #efdad7;
+  padding-top: 1rem;
+  padding-bottom: 0.7rem;
+}
+.info,
+.doa {
+  background-color: var(--bg);
+  color: #efdad7;
+  padding-top: 3rem;
+  padding-bottom: 8.7rem;
+}
+
+.penutup {
+  background-color: var(--bg);
+  color: #efdad7;
+  padding-top: 11rem;
+  padding-bottom: 8rem;
+}
+.sambutan h2 {
+  color: #9ad0ec;
+  font-family: "Poetsen One", sans-serif;
+  font-size: 4rem;
+}
+.info h3 {
+  color: #efdad7;
+  font-family: "Poetsen One", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.info h1 {
+  color: black;
+  font-family: "Sacramento", cursive;
+  font-size: 5rem;
+  font-weight: bold;
+}
+.info h2 {
+  color: black;
+  font-family: "Sacramento", cursive;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.gift h2,
+.doa h2 {
+  color: black;
+  font-family: "Sacramento", cursive;
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.gift p {
+  font-family: "Work Sans", sans-serif;
+}
+.tombolmap {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#info .deskripsi {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Media Query tambahan untuk HP supaya Hero lebih kecil */
+@media (max-width: 576px) {
+  html {
+    font-size: 75%;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+.gift h2 .footer {
+  width: 100%;
+  height: 50px; /* Menentukan tinggi footer */
+  background-color: rgba(0, 0, 0, 0.7); /* Background semi-transparan */
+  color: white;
+  display: flex;
+  justify-content: center; /* Menempatkan teks secara horizontal di tengah */
+  align-items: center; /* Menempatkan teks secara vertikal di tengah */
+  font-size: 1rem;
+  z-index: 2;
+}
+.map-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* rasio 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.map-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.credit {
+  margin: 0;
+}
+
+.section-flip {
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.section-content {
+  transition: transform 1s ease;
+  transform-style: preserve-3d;
+}
+
+.section-content.flip {
+  transform: rotateY(180deg);
+}
+
+.section-inner {
+  backface-visibility: hidden;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  color: black;
+}
+
+.table td,
+.table th {
+  background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: midnightblue;
+}
+
+#toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #9ad0ec;
+  color: #efdad7;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+#toast.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Media query laptop */
+@media (max-width: 992px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Media query tablet */
+@media (max-width: 768px) {
+  .ucapan {
+    min-height: auto;
+    padding: 4rem 1rem;
+  }
+}
