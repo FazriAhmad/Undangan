@@ -196,13 +196,13 @@ section.hero {
 }
 
 .info h1 {
-  color: #9ad0ec;
+  color: black;
   font-family: "Sacramento", cursive;
   font-size: 5rem;
   font-weight: bold;
 }
 .info h2 {
-  color: #9ad0ec;
+  color: black;
   font-family: "Sacramento", cursive;
   font-size: 3rem;
   font-weight: bold;
